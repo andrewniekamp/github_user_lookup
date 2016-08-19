@@ -2,6 +2,15 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+#user {
+  position: relative;
+  height: 300px;
+}
+
+#user-image {
+  width: 100px;
+}
+
 .content {
   min-height: 225px;
 }

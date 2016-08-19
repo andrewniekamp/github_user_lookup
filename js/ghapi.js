@@ -6,9 +6,19 @@ var getUserRepos = function(username) {
     $("#user").html(" ");
     $("#repos").html(" ");
 
+    console.log(response);
+
+    var images = '';
+    for (var i = 1; i <= 4; i++) {
+      images += "<a href='" + response[0].owner.html_url + "'><img style='opacity:0." + (i * 24) + ";width:25%;' class='user-image' src='" + response[0].owner.avatar_url +"'/></a>";
+    }
+
+
     $("#user").html(
-      "<h1>User: <a href='" + response[0].owner.html_url + "'>" + response[0].owner.login + "</a></h1>" +
-      "<a href='" + response[0].owner.html_url + "'><img id='user-image' src='" + response[0].owner.avatar_url +"'/></a>"
+      "<h1>User: <a href='" + response[0].owner.html_url + "'>" + response[0].owner.login + "</a></h1>" + images
+      // "<a href='" + response[0].owner.html_url + "'><img id='user-image-alt1' src='" + response[0].owner.avatar_url +"'/></a>" +
+      // "<a href='" + response[0].owner.html_url + "'><img id='user-image' src='" + response[0].owner.avatar_url +"'/></a>" +
+      // "<a href='" + response[0].owner.html_url + "'><img id='user-image-alt2' src='" + response[0].owner.avatar_url +"'/></a>"
     );
 
     var description = " ";
