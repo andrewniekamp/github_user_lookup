@@ -26,8 +26,7 @@ var getUserRepos = function(username) {
           "<div class='col-xs-12'>" +
             "<p>" + description + "</p>" +
           "</div>" + //closing col-xs-12
-        "</div>" + //closing col-sm-6
-        "<div class='clearfix visible-sm'></div>"
+        "</div>" //closing col-sm-6
       );
     });
   }).fail(function(error){

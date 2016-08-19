@@ -5,6 +5,5 @@ $(function(){
     event.preventDefault();
     var username = $("#user-input").val();
     getUserRepos(username);
-
   });
 });
