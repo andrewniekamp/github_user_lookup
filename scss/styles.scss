@@ -2,24 +2,76 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.center {
+  text-align: center;
+}
+
 #user {
   position: relative;
   height: 300px;
+  padding-top: 20px;
 }
 
 #user-image {
   width: 100px;
 }
 
+a {
+  color: #575761;
+}
+a:hover {
+  color: #FFBF46;
+}
+.orange {
+  color: #FFBF46;
+}
+
 .content {
+  text-align: center;
   min-height: 225px;
+  background: linear-gradient(#ddd, rgba(0,0,0,0));
+  padding-top: 5px;
 }
 
 #banner-container {
   text-align: center;
+  background-color: #575761;
 }
 
 #banner-text {
   font-family: 'Black Ops One', cursive;
   font-size: 80px;
+  color: #8ACB88;
+}
+
+#version-text {
+  color: #FFBF46;
+}
+
+#user-input {
+  width: 50%;
+  height: 40px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.app-btn {
+  background-color: #8ACB88;
+  width: 50%;
+  height: 40px;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #FFBF46;
+}
+
+#vid-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  z-index: -100;
+  background-size: cover;
+  opacity: 0.2;
 }
