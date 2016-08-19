@@ -1,5 +1,7 @@
 body {
   font-family: 'Raleway', sans-serif;
+  min-width: 700px;
+  text-align: center;
 }
 
 .center {
@@ -8,28 +10,38 @@ body {
 
 #user {
   position: relative;
-  height: 300px;
+  height: auto;
   padding-top: 20px;
+  border-bottom: 4px solid #FFBF46;
 }
 
-#user-image {
-  width: 100px;
+#images {
+  background-color: white;
+}
+
+#repos {
+  margin-top: 15px;
+}
+
+#repo-title {
+  margin-bottom: 10px;
 }
 
 a {
   color: #575761;
 }
+
 a:hover {
   color: #FFBF46;
 }
+
 .orange {
   color: #FFBF46;
 }
 
 .content {
-  text-align: center;
   min-height: 225px;
-  background: linear-gradient(#ddd, rgba(0,0,0,0));
+  background: linear-gradient(#ddd, #ddd, #ddd, rgba(0,0,0,0));
   padding-top: 5px;
 }
 
@@ -73,5 +85,5 @@ a:hover {
   min-height: 100%;
   z-index: -100;
   background-size: cover;
-  opacity: 0.2;
+  opacity: 0.06;
 }

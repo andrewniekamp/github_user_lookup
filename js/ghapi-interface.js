@@ -1,6 +1,7 @@
 var getUserRepos = require('./../js/ghapi.js').repoModule;
 
 $(function(){
+  $("#body-container").hide();
   $("#search").submit(function(event) {
     event.preventDefault();
     var username = $("#user-input").val();

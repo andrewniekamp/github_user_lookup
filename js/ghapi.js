@@ -8,15 +8,16 @@ var getUserRepos = function(username) {
 
     console.log(response);
     if (response.length > 0) {
-      var images = '';
+      var images = '<div id="images">';
       for (var i = 1; i <= 4; i++) {
         images += "<a href='" + response[0].owner.html_url + "'><img style='opacity:0." + (i * 24) + ";width:25%;' class='user-image' src='" + response[0].owner.avatar_url +"'/></a>";
       }
+      images += '</div>';
 
-      $("#user").html("<h1>User: <a href='" + response[0].owner.html_url + "'>" + response[0].owner.login + "</a></h1>" + images);
+      $("#user").html("<h1><span class='orange'>> </span>User: <a href='" + response[0].owner.html_url + "'>" + response[0].owner.login + "</a></h1>" + images);
 
       var description = " ";
-      $("#repos").prepend("<h1>Repositories</h1>");
+      $("#repos").prepend("<h1 id='repo-title'><span class='orange'>> </span>Located Repositories</h1>");
       $.each(response, function(index) {
         var created = moment(this.created_at).format('MMMM Do YYYY, h a');
         var updated = moment(this.updated_at).format('MMMM Do YYYY, h a');
