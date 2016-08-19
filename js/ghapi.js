@@ -1,19 +1,22 @@
 var key = require('./../.env').apiKey;
 
 var getUserRepos = function(username) {
-  $.get('https://api.github.com/users/' + username + '/repos?access_token=' + key).then(function(response){
-    console.log(response);
+  return $.get('https://api.github.com/users/' + username + '/repos?access_token=' + key).then(function(response){
+    //Clear for consecutive searches
+    $("#user").html(" ");
+    $("#repos").html(" ");
 
     $("#user").html(
-      "<h1><a href='" + response[0].owner.html_url + "'>" + response[0].owner.login + "</a></h1>" +
+      "<h1>User: <a href='" + response[0].owner.html_url + "'>" + response[0].owner.login + "</a></h1>" +
       "<a href='" + response[0].owner.html_url + "'><img id='user-image' src='" + response[0].owner.avatar_url +"'/></a>"
     );
 
     var description = " ";
+    $("#repos").prepend("<h1>Repositories</h1>");
     $.each(response, function(index) {
       var created = moment(this.created_at).format('MMMM Do YYYY, h a');
       var updated = moment(this.updated_at).format('MMMM Do YYYY, h a');
-      if (this.description != null) {
+      if (this.description !== null) {
         description = this.description;
       }
       $("#repos").append(
